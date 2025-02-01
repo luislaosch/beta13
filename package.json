@@ -1,0 +1,40 @@
+{
+  "name": "beta13",
+  "version": "1.0.0",
+  "description": "hackaton_13_beta",
+  "main": "index.js",
+  "scripts": {
+    "build":"babel src --out-dir build",
+    "dev": "nodemon src/index.js --exec babel-node",
+    "start":"nodemon build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luislaosch/beta13.git"
+  },
+  "keywords": [],
+  "author": "Luis Laos",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/luislaosch/beta13/issues"
+  },
+  "homepage": "https://github.com/luislaosch/beta13#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.7",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.7",
+    "nodemon": "^3.1.9"
+  }
+}
