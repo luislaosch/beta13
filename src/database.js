@@ -4,6 +4,7 @@ mongoose.connect("mongodb://localhost/beta13"
 // ,{
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true
+//     useFindAndModify: true
 // }
 )
     .then(db=>console.log("DB conectada"))
