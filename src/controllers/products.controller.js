@@ -1,17 +1,27 @@
 //importar modelo
 import Product from "../models/Product"
 
-export const createProduct = (req, res)=>{
-    res.json('crear producto')
-    console.log(req.body)
+export const createProduct = async(req, res)=>{
+    try {
+        const {name, category,price,imgURL}= req.body
+        const newProduct = new Product({name, category,price,imgURL});
+        const productSave =await newProduct.save();
+        res.status(201).json(productSave);
+    } catch (error) {
+        res.status(500).json({message: error.message});
+    }
+   
+    
 }
 
-export const getProducts = (req, res)=>{
-    res.json('ver todos productos')
+export const getProducts = async(req, res)=>{
+    const products = await Product.find();
+    res.json(products);
 }
 
-export const getProductById = (req, res)=>{
-    res.json('ver producto por id')
+export const getProductById = async(req, res)=>{
+    const productById = await Product.findById(req.params.productId);
+    res.status(200).json(productById);
 }
 
 export const updateProductById = (req, res)=>{

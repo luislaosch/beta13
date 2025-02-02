@@ -10,4 +10,4 @@ const productSchema =new Schema({
     versionKey:false
 })
 
-export default ('Product',productSchema)
+export default model ('Product',productSchema)
