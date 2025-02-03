@@ -2,6 +2,8 @@
 import config from "../config";
 import User from "../models/User"
 import jwt from "jsonwebtoken"
+import Role from '../models/Role'
+import { token } from "morgan";
 
 export const signUp = async(req, res)=>{
     try {
@@ -13,10 +15,21 @@ export const signUp = async(req, res)=>{
             email,
             password: await User.encryptPassword(password)
         });
+
+        if(roles){
+            //busca los roles creados
+            const foundRoles = await Role.find({name: {$in: roles}})
+            newUser.roles= foundRoles.map(role => role._id)
+        }else{
+            //si no hay unb role asignado le asigna el rol user
+            const role = await Role.findOne({name:"user"})
+            newUser.roles = [role._id];
+        }
         //guardado del usuario nuevo con la contraseña encriptada
         const savedUser = await newUser.save();
+        console.log(savedUser);
         // generar token
-        const token = jwt.sign({id:savedUser._id},config.SECRET,{expiresIn:7200});
+        const token = jwt.sign({id:savedUser._id},config.SECRET,{expiresIn:43200});
 
         res.status(201).json({token});
 
@@ -26,7 +39,15 @@ export const signUp = async(req, res)=>{
 }
 
 export const signIn = async(req, res)=>{
-    res.json('sing in')
+    
+    const userFound = await User.findOne({email: req.body.email}).populate("roles") //.populate para que devuelva todo el objeto
+    if(!userFound)return res.status(400).json({message: "user not found"})
+    
+    const maschPassword = await User.comparePassword(req.body.password, userFound.password)
+
+    if(!maschPassword) return res.status(401).json({token: null, message: 'Invalid password'})
+    const token = jwt.sign({id:userFound._id},config.SECRET,{expiresIn:43200})
+    res.json({token})
 }
 
 
