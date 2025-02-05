@@ -7,14 +7,10 @@ import {createRoles} from './libs/initialSetup';
 import productsRoute from './routes/products.route';
 import authRoute from './routes/auth.route';
 
-
-
 const app = express();
 createRoles();
 
 app.set('pkg',pkg)
-
-
 
 app.use(morgan('dev'));
 app.use(express.json());

@@ -40,14 +40,23 @@ export const signUp = async(req, res)=>{
 
 export const signIn = async(req, res)=>{
     
-    const userFound = await User.findOne({email: req.body.email}).populate("roles") //.populate para que devuelva todo el objeto
-    if(!userFound)return res.status(400).json({message: "user not found"})
     
-    const maschPassword = await User.comparePassword(req.body.password, userFound.password)
 
-    if(!maschPassword) return res.status(401).json({token: null, message: 'Invalid password'})
-    const token = jwt.sign({id:userFound._id},config.SECRET,{expiresIn:43200})
-    res.json({token})
+    try {
+        const userFound = await User.findOne({email: req.body.email}).populate("roles") //.populate para que devuelva todo el objeto
+        if(!userFound)return res.status(400).json({message: "user not found"})
+    
+        const maschPassword = await User.comparePassword(req.body.password, userFound.password)
+
+        if(!maschPassword) return res.status(401).json({token: null, message: 'Invalid password'})
+        const token = jwt.sign({id:userFound._id},config.SECRET,{expiresIn:43200})
+        res.json({token})
+        
+    } catch (error) {
+        res.status(500).json({message: error.message});
+    }
+
+    
 }
 
 
