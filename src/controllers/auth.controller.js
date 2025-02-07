@@ -7,9 +7,7 @@ import { token } from "morgan";
 
 export const signUp = async(req, res)=>{
     try {
-        const {username, email, password, roles } = req.body;
-
-        
+        const {username, email, password, roles } = req.body;     
         const newUser = new User({
             username,
             email,
@@ -40,8 +38,6 @@ export const signUp = async(req, res)=>{
 
 export const signIn = async(req, res)=>{
     
-    
-
     try {
         const userFound = await User.findOne({email: req.body.email}).populate("roles") //.populate para que devuelva todo el objeto
         if(!userFound)return res.status(400).json({message: "user not found"})
