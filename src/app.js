@@ -30,6 +30,6 @@ app.get('/',(req,res)=>{
 //definiendo rutas
 app.use('/api/products',productsRoute);
 app.use('/api/auth',authRoute);
-app.use('/api/auth',usersRoute);
+app.use('/api/users',usersRoute);
 
 export default app;
