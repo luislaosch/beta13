@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "7a68dd86-424c-440d-a5b5-3e9de69f4ab4",
+		"name": "beta13",
+		"description": "|",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39557304"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "products-post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5NTE2MCwiZXhwIjoxNzM4OTM4MzYwfQ.n4RotKN1ct87jXV5MwSpp5iTSbQ0obJakyzkrgfLWFw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test product 11\",\r\n    \"category\": \"test categoria 1\",\r\n    \"price\": 712.28,\r\n    \"imgURL\":\"https://gowinston.ai/es/una-comparacion-en-profundidad-chatgpt-vs-claude-vs-bard/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products-put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTAwZTZjNGFkMzBlMzlkZjc1Mzc1OCIsImlhdCI6MTczODg5NDY2NywiZXhwIjoxNzM4OTM3ODY3fQ.5DdctTSZ_w4BZjclzF9P9mO86DpsyI1snQ-l6Rl7eJU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test product 3\",\r\n    \"category\": \"test categoria 1\",\r\n    \"price\": 1300.62,\r\n    \"imgURL\":\"https://www.cursosgis.com/como-convertir-un-archivo-con-formato-py-de-python-en-un-archivo-ejecutable-con-formato-exe/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/679f02631b829b7a6a62febc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"679f02631b829b7a6a62febc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products-get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test product 3\",\r\n    \"category\": \"test categoria 1\",\r\n    \"price\": 1212.02,\r\n    \"imgURL\":\"https://elefantetecnologico.com/que-es-claude-ai-y-como-puede-beneficiar-tu-negocio/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product-by-Id-get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test product 3\",\r\n    \"category\": \"test categoria 1\",\r\n    \"price\": 1212.02,\r\n    \"imgURL\":\"https://elefantetecnologico.com/que-es-claude-ai-y-como-puede-beneficiar-tu-negocio/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/679f02631b829b7a6a62febc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"679f02631b829b7a6a62febc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product-by-Id-get",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTAwZTZjNGFkMzBlMzlkZjc1Mzc1OCIsImlhdCI6MTczODg5NDY2NywiZXhwIjoxNzM4OTM3ODY3fQ.5DdctTSZ_w4BZjclzF9P9mO86DpsyI1snQ-l6Rl7eJU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test product 3\",\r\n    \"category\": \"test categoria 1\",\r\n    \"price\": 1212.02,\r\n    \"imgURL\":\"https://elefantetecnologico.com/que-es-claude-ai-y-como-puede-beneficiar-tu-negocio/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/679f02631b829b7a6a62febc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"679f02631b829b7a6a62febc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "users-create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"userByControllerUsers\",\r\n    \"email\": \"userByControllerUsers@email.com\",\r\n    \"password\": \"userByControllerUsers\",\r\n    \"roles\" : [\"moderator\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users-get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"userByControllerUsers\",\r\n    \"email\": \"userByControllerUsers@email.com\",\r\n    \"password\": \"userByControllerUsers\",\r\n    \"roles\" : [\"moderator\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users-get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"userByControllerUsers\",\r\n    \"email\": \"userByControllerUsers@email.com\",\r\n    \"password\": \"userByControllerUsers\",\r\n    \"roles\" : [\"moderator\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/67a56de5ce238d56eb636cc7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"67a56de5ce238d56eb636cc7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users-update one",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"userByControllerUsers\",\r\n    \"email\": \"userByControllerUsers@email.com\",\r\n    \"password\": \"userByControllerUsers\",\r\n    \"roles\" : [\"moderator\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/67a56de5ce238d56eb636cc7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"67a56de5ce238d56eb636cc7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users-delete one",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/67a56de5ce238d56eb636cc7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"67a56de5ce238d56eb636cc7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "auth-singUp-(Register)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"usermoderator\",\r\n    \"email\": \"usermoderator@email.com\",\r\n    \"password\": \"usermoderator\",\r\n    \"roles\" : [\"moderator\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth-singIn-(Login)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"usersadmin@email.com\",\r\n    \"password\": \"usersadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

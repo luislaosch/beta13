@@ -21,7 +21,7 @@ export const getUserById = async(req, res)=>{
 
 export const createUser = async(req, res)=>{
 
-    res.json({message:"crear usuario"})
+    res.json({message:"Exito crear usuario"})
     // try {
     //     const {username, email,password}= req.body
     //     const newUser = new User({username, email,password:await User.encryptPassword(password)});
