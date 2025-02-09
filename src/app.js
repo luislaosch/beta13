@@ -7,8 +7,10 @@ import {createRoles} from './libs/initialSetup';
 import productsRoute from './routes/products.route';
 import authRoute from './routes/auth.route';
 import usersRoute from './routes/user.route'
+import cartRoute from './routes/cart.route'
 
 const app = express();
+//creando roles por defecto
 createRoles();
 
 app.set('pkg',pkg)
@@ -31,5 +33,6 @@ app.get('/',(req,res)=>{
 app.use('/api/products',productsRoute);
 app.use('/api/auth',authRoute);
 app.use('/api/users',usersRoute);
+app.use('/api/cart', cartRoute);
 
 export default app;
