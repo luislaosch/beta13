@@ -21,7 +21,7 @@
 								"type": "text"
 							},
 							{
-								"key": "access-token",
+								"key": "x-access-token",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5NTE2MCwiZXhwIjoxNzM4OTM4MzYwfQ.n4RotKN1ct87jXV5MwSpp5iTSbQ0obJakyzkrgfLWFw",
 								"type": "text"
 							}
@@ -62,7 +62,7 @@
 								"type": "text"
 							},
 							{
-								"key": "access-token",
+								"key": "x-access-token",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTAwZTZjNGFkMzBlMzlkZjc1Mzc1OCIsImlhdCI6MTczODg5NDY2NywiZXhwIjoxNzM4OTM3ODY3fQ.5DdctTSZ_w4BZjclzF9P9mO86DpsyI1snQ-l6Rl7eJU",
 								"type": "text"
 							}
@@ -181,7 +181,7 @@
 								"type": "text"
 							},
 							{
-								"key": "access-token",
+								"key": "x-access-token",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTAwZTZjNGFkMzBlMzlkZjc1Mzc1OCIsImlhdCI6MTczODg5NDY2NywiZXhwIjoxNzM4OTM3ODY3fQ.5DdctTSZ_w4BZjclzF9P9mO86DpsyI1snQ-l6Rl7eJU",
 								"type": "text"
 							}
@@ -227,14 +227,14 @@
 								"type": "text"
 							},
 							{
-								"key": "access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODk4MDE2NCwiZXhwIjoxNzM5MDIzMzY0fQ.KzSKtaTGfXa1lP92Tn1zOF9JGzJqTp5USj9j4qoqIT4",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"userByControllerUsers\",\r\n    \"email\": \"userByControllerUsers@email.com\",\r\n    \"password\": \"userByControllerUsers\",\r\n    \"roles\" : [\"moderator\"]\r\n}",
+							"raw": "{\r\n    \"username\": \"userByControllerUsers2\",\r\n    \"email\": \"userByControllerUsers2@email.com\",\r\n    \"password\": \"userByControllerUsers2\",\r\n    \"roles\":[\"admin\",\"user\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -270,7 +270,7 @@
 								"type": "text"
 							},
 							{
-								"key": "access-token",
+								"key": "x-access-token",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
 								"type": "text",
 								"disabled": true
@@ -314,7 +314,7 @@
 								"type": "text"
 							},
 							{
-								"key": "access-token",
+								"key": "x-access-token",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
 								"type": "text",
 								"disabled": true
@@ -356,7 +356,7 @@
 								"type": "text"
 							},
 							{
-								"key": "access-token",
+								"key": "x-access-token",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
 								"type": "text"
 							}
@@ -397,7 +397,7 @@
 								"type": "text"
 							},
 							{
-								"key": "access-token",
+								"key": "x-access-token",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczODg5OTM1NiwiZXhwIjoxNzM4OTQyNTU2fQ.sSoq45lX6uKwT_c6mMr6PcN-injoRO17Y37Wl3JCisA",
 								"type": "text"
 							}
@@ -441,11 +441,17 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"usermoderator\",\r\n    \"email\": \"usermoderator@email.com\",\r\n    \"password\": \"usermoderator\",\r\n    \"roles\" : [\"moderator\"]\r\n}",
+							"raw": "{\r\n    \"username\": \"w32\",\r\n    \"email\": \"usermoderator@email.com\",\r\n    \"password\": \"usermoderator\",\r\n    \"roles\" : [\"jdoijgodijr\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -499,6 +505,178 @@
 								"api",
 								"auth",
 								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "add-product-by-cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczOTE1Mjg5NywiZXhwIjoxNzM5MTk2MDk3fQ.eNEQOr5vbiSelYEMSupPEqNuHXqmXtGUBhaU8LMhS_A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"67a56f86ce238d56eb636cdb\",\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-cart-by-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczOTE1Mjg5NywiZXhwIjoxNzM5MTk2MDk3fQ.eNEQOr5vbiSelYEMSupPEqNuHXqmXtGUBhaU8LMhS_A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove-product-by-id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczOTE1Mjg5NywiZXhwIjoxNzM5MTk2MDk3fQ.eNEQOr5vbiSelYEMSupPEqNuHXqmXtGUBhaU8LMhS_A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"67a56f86ce238d56eb636cdb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear-car",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTU2ZTAwY2UyMzhkNTZlYjYzNmNjYSIsImlhdCI6MTczOTE1Mjg5NywiZXhwIjoxNzM5MTk2MDk3fQ.eNEQOr5vbiSelYEMSupPEqNuHXqmXtGUBhaU8LMhS_A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart/clear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"clear"
 							]
 						}
 					},
