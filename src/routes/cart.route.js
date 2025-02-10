@@ -1,10 +1,13 @@
 import { Router } from "express";
 const router = Router();
+import { verifyToken } from "../middlewares/authJwt.js";
 import * as cartController from '../controllers/cart.controller'
 
-router.get("/:userId", cartController.getCartByUserId);
-router.post("/add", cartController.addProductToCart);
-router.delete("/:userId/remove/:productId", cartController.removeProductFromCart);
-router.delete("/:userId/clear", cartController.clearCart);
+//agregamos el verifyToken para que accedan usuarios autenticados
+router.get("/", verifyToken,cartController.getCartByUserId);
+router.post("/add", verifyToken,cartController.addProductToCart);
+// router.delete("/remove/:productId", verifyToken, cartController.removeProductFromCart);
+router.delete("/remove", verifyToken, cartController.removeProductFromCart);
+router.delete("/clear", verifyToken, cartController.clearCart);
 
 export default router;
