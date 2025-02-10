@@ -45,8 +45,16 @@ export const signIn = async(req, res)=>{
         const maschPassword = await User.comparePassword(req.body.password, userFound.password)
 
         if(!maschPassword) return res.status(401).json({token: null, message: 'Invalid password'})
-        const token = jwt.sign({id:userFound._id},config.SECRET,{expiresIn:43200})
-        res.json({token})
+        
+        const token = jwt.sign(
+            { id: userFound._id, email: userFound.email, username: userFound.username },
+            config.SECRET,
+            { expiresIn: 43200 }
+        );
+        res.json({ token, user: { id: userFound._id, email: userFound.email, username: userFound.username } });
+        
+        // const token = jwt.sign({id:userFound._id},config.SECRET,{expiresIn:43200})
+        // res.json({token})
         
     } catch (error) {
         res.status(500).json({message: error.message});
