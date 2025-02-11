@@ -1,5 +1,6 @@
+import 'dotenv/config';  // Carga las variables de entorno automáticamente
 import app from './app'
 import './database'
 
-app.listen(3000);
-console.log("Servidor listen on port ", 3000)
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));

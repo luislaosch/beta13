@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import config from './config.js'
 
-mongoose.connect("mongodb://localhost/beta13"
+mongoose.connect(config.MONGO_URI||"mongodb://localhost/beta13"
 // ,{
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
