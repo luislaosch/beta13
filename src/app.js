@@ -1,5 +1,6 @@
-import 'dotenv/config'
+// import 'dotenv/config'
 import express from 'express';
+import cors from 'cors';
 import morgan from 'morgan';
 import pkg from '../package.json'
 //importar los roles al inicio de la aplicacion 
@@ -18,6 +19,7 @@ app.set('pkg',pkg)
 
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors({origin: '*'}));
 
 
 app.get('/',(req,res)=>{

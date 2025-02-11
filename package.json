@@ -4,9 +4,9 @@
   "description": "hackaton_13_beta",
   "main": "index.js",
   "scripts": {
-    "build":"babel src --out-dir build",
+    "build": "babel src --out-dir build",
     "dev": "nodemon src/index.js --exec babel-node",
-    "start":"nodemon build/index.js"
+    "start": "nodemon build/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,12 +23,15 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "culqi-node": "^2.1.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.5",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.26.4",
