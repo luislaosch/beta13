@@ -3,7 +3,8 @@ import config from "../config";
 import User from "../models/User"
 import jwt from "jsonwebtoken"
 import Role from '../models/Role'
-import { token } from "morgan";
+import  Token  from '../models/Token';
+// import { token } from "morgan";
 
 export const signUp = async(req, res)=>{
     try {
@@ -62,16 +63,123 @@ export const signIn = async(req, res)=>{
 }
 
 
-export const logoutUser = async (req, res) => {
+// export const logout = async (req, res) => {
+//     try {
+//         const token = req.headers["x-access-token"];
+        
+//         if (!token) {
+//             return res.status(400).json({ message: "No token provided" });
+//         }
+
+//         // Verificar que el token sea válido
+//         try {
+//             const decoded = jwt.verify(token, config.SECRET);
+//             const expiresAt = new Date(decoded.exp * 1000);
+//             // Guardar el token en la lista negra
+//             // const decodedToken = jwt.decode(token);
+//             // const expiresAt = new Date(decodedToken.exp * 1000);
+            
+//             const invalidToken = new InvalidToken({
+//                 token,
+//                 expiresAt
+//             });
+//             await invalidToken.save();
+//             console.log('Token guardado en lista negra:', invalidToken);
+
+//             return res.status(200).json({ message: "Logout successful" });
+//         } catch (error) {
+//             return res.status(401).json({ message: "Invalid token" });
+//         }
+//     } catch (error) {
+//         return res.status(500).json({ message: error.message });
+//     }
+// }
+
+export const logout = async (req, res) => {
     try {
-        const { token } = req.body;
-
-        // Eliminar el token de la base de datos
-        await Auth.findOneAndDelete({ token });
-        await jwt.findOneAndDelete({ token });
-
-        res.status(200).json({ message: 'Logout exitoso' });
+        // Extraer el token del header x-access-token
+        const token = req.headers["x-access-token"];
+        if (!token) {
+          return res.status(401).json({ message: "Token no proporcionado" });
+        }
+    
+        // Verificar y decodificar el token
+        let decoded;
+        try {
+          decoded = jwt.verify(token, config.SECRET);
+        } catch (error) {
+          if (error instanceof jwt.TokenExpiredError) {
+            return res.status(401).json({ message: "Token expirado" });
+          }
+          return res.status(401).json({ message: "Token inválido" });
+        }
+    
+        // Verificar si el token ya está revocado
+        const existingToken = await Token.findOne({ token });
+        if (existingToken) {
+          return res.status(400).json({ message: "Token ya revocado" });
+        }
+    
+        // Registrar el token en la lista negra
+        await Token.create({
+          token,
+          expiresAt: new Date(decoded.exp * 1000) // Convertir a milisegundos
+        });
+    
+        res.status(200).json({ message: "Logout exitoso" });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-};
+    
+    // try {
+
+    //     const token = req.headers["x-access-token"];
+    //     //verificando si existe un token 
+    //     console.log("logout");
+    //     console.log(token);
+
+    //     // const token = req.headers["x-access-token"];
+    //     // console.log('Token recibido:', token);
+        
+    //     if (!token) {
+    //         return res.status(400).json({ message: "No token provided" });
+    //     }
+
+    //     try {
+    //         const decoded = jwt.verify(token, config.SECRET);
+    //         console.log('Token decodificado:', decoded);
+            
+    //         const expiresAt = new Date(decoded.exp * 1000);
+    //         console.log('Fecha de expiración:', expiresAt);
+
+    //         // Intentamos guardar y capturamos el resultado
+    //         const savedToken = await InvalidToken.create({
+    //             token,
+    //             expiresAt
+    //         });
+            
+    //         console.log('Token guardado:', savedToken);
+
+    //         // Verificamos que se guardó correctamente
+    //         const verifySaved = await InvalidToken.findOne({ token });
+    //         console.log('Verificación de guardado:', verifySaved);
+
+    //         return res.status(200).json({ 
+    //             message: "Logout successful",
+    //             tokenSaved: savedToken !== null
+    //         });
+    //     } catch (error) {
+    //         console.error('Error al procesar el token:', error);
+    //         return res.status(401).json({ 
+    //             message: "Invalid token",
+    //             error: error.message 
+    //         });
+    //     }
+    // } catch (error) {
+    //     console.error('Error en logout:', error);
+    //     return res.status(500).json({ 
+    //         message: error.message,
+    //         error: error.stack 
+    //     });
+    // }
+}
