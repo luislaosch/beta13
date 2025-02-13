@@ -1,4 +1,4 @@
-// import 'dotenv/config'
+import 'dotenv/config'
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -8,19 +8,21 @@ import config from './config';
 import {createRoles} from './libs/initialSetup';
 //importando las rutas
 
-const Culqi = require('culqi-node');
-const culqi = new Culqi({
-    // privateKey: process.env.privateKey,
-    // publicKey: process.env.publicKey,
-    privateKey: config.PRIVATEKEY,
-    publicKey: config.PUBLICKEY,
-    pciCompliant: true
-});
+// const Culqi = require('culqi-node');
+// const culqi = new Culqi({
+//     // privateKey: process.env.privateKey,
+//     // publicKey: process.env.publicKey,
+//     privateKey: config.PRIVATEKEY,
+//     publicKey: config.PUBLICKEY,
+//     pciCompliant: true
+// });
 
 import productsRoute from './routes/products.route';
 import authRoute from './routes/auth.route';
 import usersRoute from './routes/user.route'
 import cartRoute from './routes/cart.route'
+import culqiRoute from './routes/culqi.route'; // ruta para Culqi
+
 const app = express();
 //creando roles por defecto
 createRoles();
@@ -43,37 +45,37 @@ app.get('/',(req,res)=>{
 })
 
 
-app.post('/api/process/pay', async (req, res) => {
-    const producto = req.body;
-    const mires = await culqi.tokens.createToken({
-        card_number: producto.creditcard,
-        cvv: producto.cvv,
-        expiration_month: producto.month,
-        expiration_year: producto.year,
-        email: producto.email
-    }).then( (data)=>{
-      //  console.log(data);
-        try {
-             culqi.charges.createCharge({
-                amount: producto.amount,
-                currency_code: producto.currency_code,
-                email: producto.email,
-                installments: producto.installments,
-                description: producto.description,
-                source_id: data.id
-            }).then((respuesta)=>{
-                console.log(respuesta);
-                res.send({ message: respuesta });
-            }).catch(err=>{
-                res.send({ message: err});
-            })
-        } catch (error) {
-            res.send({ message: error});
-        }
-    }).catch(err=>{
-        res.send({ message: err});
-    })
-})
+// app.post('/api/process/pay', async (req, res) => {
+//     const producto = req.body;
+//     const mires = await culqi.tokens.createToken({
+//         card_number: producto.creditcard,
+//         cvv: producto.cvv,
+//         expiration_month: producto.month,
+//         expiration_year: producto.year,
+//         email: producto.email
+//     }).then( (data)=>{
+//       //  console.log(data);
+//         try {
+//              culqi.charges.createCharge({
+//                 amount: producto.amount,
+//                 currency_code: producto.currency_code,
+//                 email: producto.email,
+//                 installments: producto.installments,
+//                 description: producto.description,
+//                 source_id: data.id
+//             }).then((respuesta)=>{
+//                 console.log(respuesta);
+//                 res.send({ message: respuesta });
+//             }).catch(err=>{
+//                 res.send({ message: err});
+//             })
+//         } catch (error) {
+//             res.send({ message: error});
+//         }
+//     }).catch(err=>{
+//         res.send({ message: err});
+//     })
+// })
 
 
 //definiendo rutas
@@ -81,5 +83,6 @@ app.use('/api/products',productsRoute);
 app.use('/api/auth',authRoute);
 app.use('/api/users',usersRoute);
 app.use('/api/cart', cartRoute);
+app.use('/api/process', culqiRoute); // Usando la nueva ruta de Culqi
 
 export default app;
