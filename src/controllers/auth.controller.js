@@ -68,6 +68,7 @@ export const logoutUser = async (req, res) => {
 
         // Eliminar el token de la base de datos
         await Auth.findOneAndDelete({ token });
+        await jwt.findOneAndDelete({ token });
 
         res.status(200).json({ message: 'Logout exitoso' });
     } catch (error) {
