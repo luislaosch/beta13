@@ -7,6 +7,6 @@ import { verifySignup } from "../middlewares";
 
 router.post('/signup',[verifySignup.checkUsernameExisted,verifySignup.checkEmailExisted,verifySignup.checkRoleExisted],authController.signUp);
 router.post('/signin',authController.signIn);
-
+router.post('/logout',authController.logoutUser);
 
 export default router;

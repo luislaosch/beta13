@@ -62,3 +62,15 @@ export const signIn = async(req, res)=>{
 }
 
 
+export const logoutUser = async (req, res) => {
+    try {
+        const { token } = req.body;
+
+        // Eliminar el token de la base de datos
+        await Auth.findOneAndDelete({ token });
+
+        res.status(200).json({ message: 'Logout exitoso' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
