@@ -1,7 +1,7 @@
 {
   "name": "beta13",
   "version": "1.0.0",
-  "description": "hackaton_13_beta",
+  "description": "hackaton_beta",
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir build",
