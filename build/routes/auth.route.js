@@ -18,5 +18,5 @@ var router = (0, _express.Router)();
 
 router.post('/signup', [_middlewares.verifySignup.checkUsernameExisted, _middlewares.verifySignup.checkEmailExisted, _middlewares.verifySignup.checkRoleExisted], authController.signUp);
 router.post('/signin', authController.signIn);
-router.post('/logout', authController.logout);
+router.get('/logout', authController.logout);
 var _default = exports["default"] = router;

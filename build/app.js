@@ -17,18 +17,11 @@ var _user = _interopRequireDefault(require("./routes/user.route"));
 var _cart = _interopRequireDefault(require("./routes/cart.route"));
 var _culqi = _interopRequireDefault(require("./routes/culqi.route"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-//importar los roles al inicio de la aplicacion 
+//importar dependecias
 
-//importando las rutas
+//importar los roles al inicio de la aplicacion (crear roles por defecto)
 
-// const Culqi = require('culqi-node');
-// const culqi = new Culqi({
-//     // privateKey: process.env.privateKey,
-//     // publicKey: process.env.publicKey,
-//     privateKey: config.PRIVATEKEY,
-//     publicKey: config.PUBLICKEY,
-//     pciCompliant: true
-// });
+//importamos rutas
 
 // ruta para Culqi
 
@@ -50,38 +43,6 @@ app.get('/', function (req, res) {
     version: app.get('pkg').version
   });
 });
-
-// app.post('/api/process/pay', async (req, res) => {
-//     const producto = req.body;
-//     const mires = await culqi.tokens.createToken({
-//         card_number: producto.creditcard,
-//         cvv: producto.cvv,
-//         expiration_month: producto.month,
-//         expiration_year: producto.year,
-//         email: producto.email
-//     }).then( (data)=>{
-//       //  console.log(data);
-//         try {
-//              culqi.charges.createCharge({
-//                 amount: producto.amount,
-//                 currency_code: producto.currency_code,
-//                 email: producto.email,
-//                 installments: producto.installments,
-//                 description: producto.description,
-//                 source_id: data.id
-//             }).then((respuesta)=>{
-//                 console.log(respuesta);
-//                 res.send({ message: respuesta });
-//             }).catch(err=>{
-//                 res.send({ message: err});
-//             })
-//         } catch (error) {
-//             res.send({ message: error});
-//         }
-//     }).catch(err=>{
-//         res.send({ message: err});
-//     })
-// })
 
 //definiendo rutas
 app.use('/api/products', _products["default"]);
