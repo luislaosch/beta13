@@ -1,7 +1,12 @@
 "use strict";
 
-var _express = _interopRequireDefault(require("express"));
+require("dotenv/config");
+var _app = _interopRequireDefault(require("./app"));
+require("./database");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-var app = (0, _express["default"])();
-app.listen(3000);
-console.log("Servidor listen on port ", 3000);
+// Carga las variables de entorno automáticamente
+
+var PORT = process.env.PORT || 4000;
+_app["default"].listen(PORT, function () {
+  return console.log("Servidor corriendo en el puerto ".concat(PORT));
+});
