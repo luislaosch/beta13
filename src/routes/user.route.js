@@ -8,8 +8,8 @@ import {authJwt, verifySignup} from '../middlewares/index'
 
 router.get('/',userController.getUsers);
 router.get('/:userId',userController.getUserById);
-router.post('/',[authJwt.verifyToken,authJwt.isAdmin, verifySignup.checkRoleExisted,verifySignup.checkUsernameExisted,verifySignup.checkEmailExisted],userController.createUser);
-router.put('/:userId',[authJwt.verifyToken,authJwt.isAdmin],userController.updateUserById);
-router.delete('/:userId',[authJwt.verifyToken,authJwt.isAdmin],userController.deleteUserById);
+router.post('/',[authJwt.verifyToken, verifySignup.checkRoleExisted,verifySignup.checkUsernameExisted,verifySignup.checkEmailExisted],userController.createUser);
+router.put('/:userId',[authJwt.verifyToken],userController.updateUserById);
+router.delete('/:userId',[authJwt.verifyToken],userController.deleteUserById);
 
 export default router;
