@@ -66,18 +66,16 @@ export const verifyToken = async (req, res, next)=>{
         }
         res.status(500).json({ message: error.message });
       }
-
-
-
 }
 
 
 export const isModerator = async(req, res , next) =>{
     //obtension del usuario
     const user = await User.findById(req.userId);
+    console.log(user);
     //obtendion de los roles asigandos a ese usuario
     const roles = await Role.find({_id:{$in: user.roles}});
-    
+    console.log(roles);
     for (let i=0;i < roles.length ;i++){
         if(roles[i].name === "moderator" || "admin"){
         // if(roles[i].name === "moderator"){
@@ -91,9 +89,10 @@ export const isModerator = async(req, res , next) =>{
 export const isAdmin = async(req, res , next) =>{
     //obtension del usuario
     const user = await User.findById(req.userId);
+    console.log(user);
     //obtendion de los roles asigandos a ese usuario
     const roles = await Role.find({_id:{$in: user.roles}});
-     
+    console.log(roles); 
     for (let i=0;i < roles.length ;i++){
         // if(roles[i].name === "moderator" || "admin"){
         if(roles[i].name === "admin"){       
