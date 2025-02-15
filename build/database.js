@@ -3,7 +3,7 @@
 var _mongoose = _interopRequireDefault(require("mongoose"));
 var _config = _interopRequireDefault(require("./config.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-_mongoose["default"].connect(_config["default"].MONGO_URI || "mongodb://localhost/beta13"
+_mongoose["default"].connect(_config["default"].MONGO_URI || "mongodb+srv://admin:admin@hackaton17.crbbn.mongodb.net/H17"
 // ,{
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,

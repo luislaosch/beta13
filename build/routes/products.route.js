@@ -16,7 +16,7 @@ var router = (0, _express.Router)();
 
 router.get('/', productsController.getProducts);
 router.get('/:productId', productsController.getProductById);
-router.post('/', [_index.authJwt.verifyToken], productsController.createProduct);
-router.put('/:productId', [_index.authJwt.verifyToken], productsController.updateProductById);
+router.post('/', [_index.authJwt.verifyToken, _index.authJwt.isAdmin], productsController.createProduct);
+router.put('/:productId', [_index.authJwt.verifyToken, _index.authJwt.isAdmin], productsController.updateProductById);
 router["delete"]('/:productId', [_index.authJwt.verifyToken], productsController.deleteProductById);
 var _default = exports["default"] = router;

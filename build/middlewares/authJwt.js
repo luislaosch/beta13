@@ -108,36 +108,39 @@ var isModerator = exports.isModerator = /*#__PURE__*/function () {
           return _User["default"].findById(req.userId);
         case 2:
           user = _context2.sent;
-          _context2.next = 5;
+          console.log(user);
+          //obtendion de los roles asigandos a ese usuario
+          _context2.next = 6;
           return _Role["default"].find({
             _id: {
               $in: user.roles
             }
           });
-        case 5:
+        case 6:
           roles = _context2.sent;
+          console.log(roles);
           i = 0;
-        case 7:
+        case 9:
           if (!(i < roles.length)) {
-            _context2.next = 14;
+            _context2.next = 16;
             break;
           }
           if (!(roles[i].name === "moderator" || "admin")) {
-            _context2.next = 11;
+            _context2.next = 13;
             break;
           }
           // if(roles[i].name === "moderator"){
           next();
           return _context2.abrupt("return");
-        case 11:
+        case 13:
           i++;
-          _context2.next = 7;
+          _context2.next = 9;
           break;
-        case 14:
+        case 16:
           return _context2.abrupt("return", res.status(403).json({
             message: "unauthorized"
           }));
-        case 15:
+        case 17:
         case "end":
           return _context2.stop();
       }
@@ -157,35 +160,38 @@ var isAdmin = exports.isAdmin = /*#__PURE__*/function () {
           return _User["default"].findById(req.userId);
         case 2:
           user = _context3.sent;
-          _context3.next = 5;
+          console.log(user);
+          //obtendion de los roles asigandos a ese usuario
+          _context3.next = 6;
           return _Role["default"].find({
             _id: {
               $in: user.roles
             }
           });
-        case 5:
+        case 6:
           roles = _context3.sent;
+          console.log(roles);
           i = 0;
-        case 7:
+        case 9:
           if (!(i < roles.length)) {
-            _context3.next = 14;
+            _context3.next = 16;
             break;
           }
           if (!(roles[i].name === "admin")) {
-            _context3.next = 11;
+            _context3.next = 13;
             break;
           }
           next();
           return _context3.abrupt("return");
-        case 11:
+        case 13:
           i++;
-          _context3.next = 7;
+          _context3.next = 9;
           break;
-        case 14:
+        case 16:
           return _context3.abrupt("return", res.status(403).json({
             message: "unauthorized"
           }));
-        case 15:
+        case 17:
         case "end":
           return _context3.stop();
       }
