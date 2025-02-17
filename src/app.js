@@ -9,9 +9,10 @@ import config from './config';
 import {createRoles} from './libs/initialSetup';
 //importamos rutas
 import productsRoute from './routes/products.route';
+// import categoriesRoute from './routes/categoryProduct.route';
 import authRoute from './routes/auth.route';
 import usersRoute from './routes/user.route'
-import cartRoute from './routes/cart.route'
+import cartRoute from './routes/cart.route';
 import culqiRoute from './routes/culqi.route'; // ruta para Culqi
 
 const app = express();
@@ -37,6 +38,7 @@ app.get('/',(req,res)=>{
 
 
 //definiendo rutas
+// app.use('/api/categoriesProducts',categoriesRoute);
 app.use('/api/products',productsRoute);
 app.use('/api/auth',authRoute);
 app.use('/api/users',usersRoute);

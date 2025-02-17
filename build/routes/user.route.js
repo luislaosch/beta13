@@ -17,7 +17,7 @@ var router = (0, _express.Router)();
 
 router.get('/', userController.getUsers);
 router.get('/:userId', userController.getUserById);
-router.post('/', [_index.authJwt.verifyToken, _index.verifySignup.checkRoleExisted, _index.verifySignup.checkUsernameExisted, _index.verifySignup.checkEmailExisted], userController.createUser);
-router.put('/:userId', [_index.authJwt.verifyToken], userController.updateUserById);
-router["delete"]('/:userId', [_index.authJwt.verifyToken], userController.deleteUserById);
+router.post('/', [_index.authJwt.verifyToken, _index.authJwt.isAdmin, _index.verifySignup.checkRoleExisted, _index.verifySignup.checkUsernameExisted, _index.verifySignup.checkEmailExisted], userController.createUser);
+router.put('/:userId', [_index.authJwt.verifyToken, _index.authJwt.isAdmin], userController.updateUserById);
+router["delete"]('/:userId', [_index.authJwt.verifyToken, _index.authJwt.isAdmin], userController.deleteUserById);
 var _default = exports["default"] = router;

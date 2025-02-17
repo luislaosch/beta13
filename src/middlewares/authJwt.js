@@ -6,37 +6,6 @@ import Token from '../models/Token'
 
 
 export const verifyToken = async (req, res, next)=>{
-    // try {
-    //     //capturamos el token que esta en la cabecera de la peticion
-    // const token = req.headers["x-access-token"];
-    // //verificando si existe un token 
-    // // console.log("verifyToken");
-    // // console.log(token);
-
-    // if(!token) return res.status(403).json({message:"No token provided"})
-    // //Si el token existe se almacena en una variable
-
-    // const invalidToken = await InvalidToken.findOne({ token });
-    // if (invalidToken) {
-    //     return res.status(401).json({ message: "Token has been invalidated" });
-    // }
-
-    // const decoded = jwt.verify(token, config.SECRET)
-    // req.userId = decoded.id;
-    // // req.userEmail = decoded.email;
-    // // req.userName = decoded.username;
-
-    // // const user = await User.finById(decoded.id);
-    // const user = await User.findById(req.userId,{password:0});
-    // console.log(user);
-    // if(!user) return res.status(404).json({message: "no user found"})
-    // next();
-        
-    // } catch (error) {
-    //     res.status(500).json({message: error.message});
-    // }
-
-
     try {
         const token = req.headers["x-access-token"];
         if (!token) return res.status(403).json({ message: "No token provided" });

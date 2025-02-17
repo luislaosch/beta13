@@ -23,6 +23,8 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default":
 
 //importamos rutas
 
+// import categoriesRoute from './routes/categoryProduct.route';
+
 // ruta para Culqi
 
 var app = (0, _express["default"])();
@@ -45,6 +47,7 @@ app.get('/', function (req, res) {
 });
 
 //definiendo rutas
+// app.use('/api/categoriesProducts',categoriesRoute);
 app.use('/api/products', _products["default"]);
 app.use('/api/auth', _auth["default"]);
 app.use('/api/users', _user["default"]);
