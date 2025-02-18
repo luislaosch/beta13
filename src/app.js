@@ -3,6 +3,7 @@ import 'dotenv/config'
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
+import bodyParser from 'body-parser'; // Para poder leer los datos que vienen en el body
 import pkg from '../package.json';
 import config from './config';
 //importar los roles al inicio de la aplicacion (crear roles por defecto)
@@ -14,6 +15,8 @@ import authRoute from './routes/auth.route';
 import usersRoute from './routes/user.route'
 import cartRoute from './routes/cart.route';
 import culqiRoute from './routes/culqi.route'; // ruta para Culqi
+import paymentRoute from './routes/payment.routes';
+// import paymentRoute from './routes/payment.route'; // Ruta para el controlador de pagos
 
 const app = express();
 //creando roles por defecto
@@ -24,6 +27,9 @@ app.set('pkg',pkg)
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors({origin: '*'}));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/',(req,res)=>{
@@ -44,5 +50,7 @@ app.use('/api/auth',authRoute);
 app.use('/api/users',usersRoute);
 app.use('/api/cart', cartRoute);
 app.use('/api/process', culqiRoute); // Usando la nueva ruta de Culqi
+
+app.use('/api/payments', paymentRoute); // Usando la nueva ruta de pagos
 
 export default app;
